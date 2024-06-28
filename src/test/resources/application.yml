@@ -1,0 +1,32 @@
+# Dynamic Datasource for Spring Boot Starter
+# Copyright (c) 2020 Yookue Ltd. All rights reserved.
+# https://yookue.com
+
+
+spring:
+    autoconfigure:
+        exclude:
+            - org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration
+            - org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+            - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+            - org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+            - org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
+            - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+            - org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration
+            - com.yookue.springstarter.mybatisdelegator.config.MybatisDelegatorAutoConfiguration
+    dynamic-datasource:
+        datasource-route:
+            testdb1:
+                name: '127.0.0.1:3306/test_db1'
+                url: 'jdbc:mysql://127.0.0.1:3306/test_db1?characterEncoding=UTF-8&useUnicode=true&allowMultiQueries=true&allowPublicKeyRetrieval=true&autoReconnect=true&failOverReadOnly=false&useSSL=false&serverTimezone=GMT%2b8&zeroDateTimeBehavior=CONVERT_TO_NULL'
+                username: 'root'
+                password: 'mysql'
+                driver-class-name: com.mysql.cj.jdbc.Driver
+                type: com.mchange.v2.c3p0.ComboPooledDataSource
+            testdb2:
+                name: '127.0.0.1:3306/test_db2'
+                url: 'jdbc:mysql://127.0.0.1:3306/test_db2?characterEncoding=UTF-8&useUnicode=true&allowMultiQueries=true&allowPublicKeyRetrieval=true&autoReconnect=true&failOverReadOnly=false&useSSL=false&serverTimezone=GMT%2b8&zeroDateTimeBehavior=CONVERT_TO_NULL'
+                username: 'root'
+                password: 'mysql'
+                driver-class-name: com.mysql.cj.jdbc.Driver
+                type: com.mchange.v2.c3p0.ComboPooledDataSource
