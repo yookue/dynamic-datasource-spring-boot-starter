@@ -18,8 +18,8 @@ package com.yookue.springstarter.dynamicdatasource.interceptor;
 
 
 import java.lang.reflect.Method;
-import javax.annotation.Nonnull;
 import javax.sql.DataSource;
+import jakarta.annotation.Nonnull;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.lang3.StringUtils;
@@ -38,8 +38,8 @@ import lombok.Setter;
  *
  * @author David Hsing
  */
+@Setter
 public class DataSourceDefinitionInterceptor implements MethodInterceptor {
-    @Setter
     private DynamicDataSourceHolder dynamicHelper;
 
     public DataSourceDefinitionInterceptor(@Nonnull DynamicDataSourceHolder helper) {

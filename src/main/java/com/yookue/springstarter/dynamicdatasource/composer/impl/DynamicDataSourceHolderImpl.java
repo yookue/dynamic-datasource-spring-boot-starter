@@ -19,8 +19,8 @@ package com.yookue.springstarter.dynamicdatasource.composer.impl;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import javax.annotation.Nullable;
 import javax.sql.DataSource;
+import jakarta.annotation.Nullable;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import com.yookue.commonplexus.javaseutil.util.MapPlainWraps;
@@ -41,11 +41,11 @@ import lombok.extern.slf4j.Slf4j;
 @NoArgsConstructor
 @AllArgsConstructor
 @Slf4j
+@Setter
 @SuppressWarnings("unused")
 public class DynamicDataSourceHolderImpl implements DynamicDataSourceHolder {
     private static final ThreadLocal<Map<Object, Object>> dataSourceHolder = new ThreadLocal<>();
 
-    @Setter
     private DynamicRoutingDataSource dynamicDataSource;
 
     @Override

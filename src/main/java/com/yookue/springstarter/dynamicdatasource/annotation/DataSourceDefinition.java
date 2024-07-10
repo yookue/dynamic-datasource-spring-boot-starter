@@ -32,7 +32,7 @@ import java.lang.annotation.Target;
  *
  * @author David Hsing
  * @see javax.sql.DataSource
- * @see "javax.annotation.sql.DataSourceDefinition"
+ * @see "jakarta.annotation.sql.DataSourceDefinition"
  */
 @Target(value = ElementType.METHOD)
 @Retention(value = RetentionPolicy.RUNTIME)

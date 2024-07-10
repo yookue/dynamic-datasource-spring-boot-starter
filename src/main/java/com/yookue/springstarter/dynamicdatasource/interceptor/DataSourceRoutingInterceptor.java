@@ -18,7 +18,7 @@ package com.yookue.springstarter.dynamicdatasource.interceptor;
 
 
 import java.lang.reflect.Method;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.lang3.StringUtils;

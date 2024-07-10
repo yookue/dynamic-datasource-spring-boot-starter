@@ -1,9 +1,0 @@
-# Dynamic Datasource for Spring Boot Starter
-# Copyright (c) 2020 Yookue Ltd. All rights reserved.
-# https://yookue.com
-
-org.springframework.boot.autoconfigure.EnableAutoConfiguration =\
-    com.yookue.springstarter.dynamicdatasource.config.DynamicDataSourceJdbcConfiguration,\
-    com.yookue.springstarter.dynamicdatasource.config.DynamicDataSourceMybatisConfiguration,\
-    com.yookue.springstarter.dynamicdatasource.config.DynamicDataSourceAopConfiguration,\
-    org.springframework.boot.autoconfigure.jdbc.DynamicDataSourceInitializer

@@ -25,11 +25,11 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.sql.DataSourceDefinition;
-import javax.annotation.sql.DataSourceDefinitions;
 import javax.sql.DataSource;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.annotation.sql.DataSourceDefinition;
+import jakarta.annotation.sql.DataSourceDefinitions;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -219,7 +219,6 @@ public class DynamicDataSourceInitializer implements BeanFactoryAware, Initializ
     }
 
     @Nullable
-    @SuppressWarnings("ConstantConditions")
     protected DataSource determineDataSource(@Nonnull DataSourceDefinition definition) {
         if (StringUtils.isBlank(definition.name())) {
             return null;

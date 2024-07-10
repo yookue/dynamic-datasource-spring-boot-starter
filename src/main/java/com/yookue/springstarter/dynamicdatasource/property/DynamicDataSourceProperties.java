@@ -54,8 +54,8 @@ public class DynamicDataSourceProperties implements Serializable {
     /**
      * The annotations package to scan
      *
-     * @see javax.annotation.sql.DataSourceDefinition
-     * @see javax.annotation.sql.DataSourceDefinitions
+     * @see jakarta.annotation.sql.DataSourceDefinition
+     * @see jakarta.annotation.sql.DataSourceDefinitions
      */
     private String jsr250BasePackage;
 

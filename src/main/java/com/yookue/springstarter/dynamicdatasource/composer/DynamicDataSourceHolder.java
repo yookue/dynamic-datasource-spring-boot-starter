@@ -17,7 +17,7 @@
 package com.yookue.springstarter.dynamicdatasource.composer;
 
 
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 import javax.sql.DataSource;
 
 

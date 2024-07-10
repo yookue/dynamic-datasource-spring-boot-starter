@@ -18,7 +18,7 @@ package com.yookue.springstarter.dynamicdatasource.config;
 
 
 import java.util.Optional;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import javax.sql.DataSource;
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.MethodInterceptor;

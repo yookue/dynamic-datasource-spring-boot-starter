@@ -17,7 +17,7 @@
 package com.yookue.springstarter.dynamicdatasource.util;
 
 
-import javax.annotation.Nullable;
+import jakarta.annotation.Nullable;
 import org.apache.commons.lang3.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 

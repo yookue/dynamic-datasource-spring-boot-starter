@@ -17,7 +17,7 @@
 package com.yookue.springstarter.dynamicdatasource.advisor;
 
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.springframework.aop.Pointcut;
 import org.springframework.aop.support.AbstractGenericPointcutAdvisor;

@@ -63,7 +63,7 @@ Take one of the previous database `testdb1` for example, the annotation is
 
 ## Requirement
 
-- jdk 1.8+
+- jdk 17+
 
 ## License
 

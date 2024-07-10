@@ -18,7 +18,7 @@ package com.yookue.springstarter.dynamicdatasource.datasource;
 
 
 import java.util.Map;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 import com.yookue.springstarter.dynamicdatasource.util.DynamicRoutingKeyHolder;
 import lombok.NoArgsConstructor;
