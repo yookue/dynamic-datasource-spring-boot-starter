@@ -18,9 +18,9 @@ package com.yookue.springstarter.dynamicdatasource.pointcut;
 
 
 import java.lang.reflect.Method;
+import javax.sql.DataSource;
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
-import javax.sql.DataSource;
 import org.springframework.aop.support.StaticMethodMatcherPointcut;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.util.ClassUtils;

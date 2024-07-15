@@ -18,8 +18,8 @@ package com.yookue.springstarter.dynamicdatasource.config;
 
 
 import java.util.LinkedHashMap;
-import jakarta.annotation.Nonnull;
 import javax.sql.DataSource;
+import jakarta.annotation.Nonnull;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;

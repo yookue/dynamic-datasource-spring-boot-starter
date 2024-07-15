@@ -17,8 +17,8 @@
 package com.yookue.springstarter.dynamicdatasource.config;
 
 
-import jakarta.annotation.Nonnull;
 import javax.sql.DataSource;
+import jakarta.annotation.Nonnull;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
