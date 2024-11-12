@@ -29,6 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootTest(classes = MockApplicationInitializer.class, webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @Import(value = MockApplicationConfiguration.class)
 @Slf4j
+@SuppressWarnings("LoggingSimilarMessage")
 class MockApplicationTest {
     @Autowired
     private MockApplicationService service;
