@@ -231,7 +231,7 @@ public class DynamicDataSourceInitializer implements BeanFactoryAware, Initializ
         properties.setPassword(definition.password());
         if (ArrayUtils.isNotEmpty(definition.properties())) {
             Map<String, String> props = new LinkedHashMap<>(ArrayUtils.getLength(definition.properties()));
-            Arrays.stream(definition.properties()).map(element -> StringUtilsWraps.splitBy(element, CharVariantConst.EQUALS)).filter(element -> ArrayUtils.getLength(element) == 2).forEach(element -> props.put(element[0], element[1]));
+            Arrays.stream(definition.properties()).map(element -> StringUtilsWraps.splitBy(element, CharVariantConst.EQUAL)).filter(element -> ArrayUtils.getLength(element) == 2).forEach(element -> props.put(element[0], element[1]));
             properties.getXa().setProperties(props);
         }
         for (DataSourcePoolType poolType : DataSourcePoolType.values()) {
