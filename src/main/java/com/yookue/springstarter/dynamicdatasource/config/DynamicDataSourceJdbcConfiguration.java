@@ -25,9 +25,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.autoconfigure.transaction.TransactionManagerCustomizers;
@@ -52,7 +52,7 @@ import com.yookue.springstarter.dynamicdatasource.property.DynamicDataSourceProp
  * @author David Hsing
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnBooleanProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "enabled", matchIfMissing = true)
 @ConditionalOnClass(value = {DataSource.class, JdbcOperations.class, DataSourceBuilder.class})
 @ConditionalOnBean(value = DataSourceBuilder.class)
 @AutoConfigureAfter(value = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class, DataSourceBuilderConfiguration.class})
@@ -80,7 +80,7 @@ public class DynamicDataSourceJdbcConfiguration {
     }
 
     @Bean(name = TRANSACTION_MANAGER)
-    @ConditionalOnProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "jdbc-transaction", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnBooleanProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "jdbc-transaction", matchIfMissing = true)
     @ConditionalOnBean(name = DATA_SOURCE)
     @ConditionalOnMissingBean(name = TRANSACTION_MANAGER)
     public TransactionManager transactionManager(@Nonnull DataSourceBuilder builder, @Qualifier(value = DATA_SOURCE) @Nonnull DataSource dataSource, @Nonnull ObjectProvider<TransactionManagerCustomizers> customizers) {

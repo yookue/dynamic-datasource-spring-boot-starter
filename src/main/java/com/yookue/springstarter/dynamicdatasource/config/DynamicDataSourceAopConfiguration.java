@@ -27,15 +27,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.aop.AopAutoConfiguration;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Role;
 import org.springframework.jdbc.core.JdbcOperations;
-import com.yookue.commonplexus.springcondition.annotation.ConditionalOnAllProperties;
+import com.yookue.commonplexus.springcondition.annotation.ConditionalOnAllBooleanProperties;
 import com.yookue.springstarter.dynamicdatasource.advisor.DataSourceDefinitionAdvisor;
 import com.yookue.springstarter.dynamicdatasource.advisor.DataSourceRoutingAdvisor;
 import com.yookue.springstarter.dynamicdatasource.composer.DynamicDataSourceHolder;
@@ -50,9 +50,9 @@ import com.yookue.springstarter.dynamicdatasource.property.DynamicDataSourceProp
  * @author David Hsing
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnAllProperties(value = {
-    @ConditionalOnProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true),
-    @ConditionalOnProperty(prefix = "spring.aop", name = "auto", havingValue = "true", matchIfMissing = true)
+@ConditionalOnAllBooleanProperties(value = {
+    @ConditionalOnBooleanProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "enabled", matchIfMissing = true),
+    @ConditionalOnBooleanProperty(prefix = "spring.aop", name = "auto", matchIfMissing = true)
 })
 @ConditionalOnClass(value = {DataSource.class, JdbcOperations.class, Advice.class, Advisor.class})
 @AutoConfigureAfter(value = {AopAutoConfiguration.class, DynamicDataSourceJdbcConfiguration.class})

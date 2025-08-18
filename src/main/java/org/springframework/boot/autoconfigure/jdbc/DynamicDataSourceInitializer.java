@@ -39,8 +39,8 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.source.InvalidConfigurationPropertyNameException;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -68,9 +68,9 @@ import com.yookue.springstarter.datasourcebuilder.property.TomcatDataSourcePrope
 import com.yookue.springstarter.dynamicdatasource.composer.DynamicDataSourceHolder;
 import com.yookue.springstarter.dynamicdatasource.config.DynamicDataSourceJdbcConfiguration;
 import com.yookue.springstarter.dynamicdatasource.property.DynamicDataSourceProperties;
+import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 
 /**
@@ -79,7 +79,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author David Hsing
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnProperty(prefix = "spring.dynamic-datasource", name = "enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnBooleanProperty(prefix = "spring.dynamic-datasource", name = "enabled", matchIfMissing = true)
 @ConditionalOnClass(value = {DataSource.class, JdbcOperations.class})
 @ConditionalOnBean(value = {DataSourceBuilder.class, DynamicDataSourceHolder.class})
 @AutoConfigureAfter(value = DynamicDataSourceJdbcConfiguration.class)
