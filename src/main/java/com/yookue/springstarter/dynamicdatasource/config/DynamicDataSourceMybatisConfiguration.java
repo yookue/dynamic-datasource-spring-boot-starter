@@ -26,13 +26,13 @@ import org.mybatis.spring.boot.autoconfigure.MybatisProperties;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.yookue.commonplexus.springcondition.annotation.ConditionalOnAllProperties;
 import com.yookue.springstarter.mybatisdelegator.composer.MybatisConfigurationDelegator;
 import com.yookue.springstarter.mybatisdelegator.config.MybatisDelegatorAutoConfiguration;
 
@@ -43,10 +43,8 @@ import com.yookue.springstarter.mybatisdelegator.config.MybatisDelegatorAutoConf
  * @author David Hsing
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnAllProperties(value = {
-    @ConditionalOnProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true),
-    @ConditionalOnProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "mybatis")
-})
+@ConditionalOnBooleanProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "enabled", matchIfMissing = true)
+@ConditionalOnProperty(prefix = DynamicDataSourceJdbcConfiguration.PROPERTIES_PREFIX, name = "mybatis")
 @ConditionalOnClass(value = {DataSource.class, SqlSession.class, MybatisConfigurationDelegator.class})
 @ConditionalOnBean(name = DynamicDataSourceJdbcConfiguration.DATA_SOURCE, value = MybatisConfigurationDelegator.class)
 @AutoConfigureAfter(value = {MybatisDelegatorAutoConfiguration.class, DynamicDataSourceJdbcConfiguration.class})
