@@ -1,6 +1,6 @@
 # Dynamic Datasource for Spring Boot Starter
-# Copyright (c) 2020 Yookue Ltd. All rights reserved.
-# https://yookue.com
+# Copyright (c) 2020 Unikue Ltd. All rights reserved.
+# https://unikue.cn
 
 
 spring:
@@ -13,7 +13,7 @@ spring:
             - org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
             - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
             - org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration
-            - com.yookue.springstarter.mybatisdelegator.config.MybatisDelegatorAutoConfiguration
+            - cn.unikue.springstarter.mybatisdelegator.config.MybatisDelegatorAutoConfiguration
     dynamic-datasource:
         datasource-route:
             testdb1:

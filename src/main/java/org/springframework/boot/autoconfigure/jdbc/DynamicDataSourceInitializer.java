@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2020 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,25 +49,25 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
-import com.yookue.commonplexus.javaseutil.constant.CharVariantConst;
-import com.yookue.commonplexus.javaseutil.util.CollectionPlainWraps;
-import com.yookue.commonplexus.javaseutil.util.RegexUtilsWraps;
-import com.yookue.commonplexus.javaseutil.util.StringUtilsWraps;
-import com.yookue.commonplexus.springutil.support.ClassPathScanningSimpleComponentProvider;
-import com.yookue.commonplexus.springutil.util.BeanFactoryWraps;
-import com.yookue.commonplexus.springutil.util.ClassUtilsWraps;
-import com.yookue.springstarter.datasourcebuilder.composer.DataSourceBuilder;
-import com.yookue.springstarter.datasourcebuilder.constant.DataSourcePoolConst;
-import com.yookue.springstarter.datasourcebuilder.enumeration.DataSourcePoolType;
-import com.yookue.springstarter.datasourcebuilder.property.C3p0DataSourceProperties;
-import com.yookue.springstarter.datasourcebuilder.property.Dbcp2DataSourceProperties;
-import com.yookue.springstarter.datasourcebuilder.property.DruidDataSourceProperties;
-import com.yookue.springstarter.datasourcebuilder.property.HikariDataSourceProperties;
-import com.yookue.springstarter.datasourcebuilder.property.OracleUcpDataSourceProperties;
-import com.yookue.springstarter.datasourcebuilder.property.TomcatDataSourceProperties;
-import com.yookue.springstarter.dynamicdatasource.composer.DynamicDataSourceHolder;
-import com.yookue.springstarter.dynamicdatasource.config.DynamicDataSourceJdbcConfiguration;
-import com.yookue.springstarter.dynamicdatasource.property.DynamicDataSourceProperties;
+import cn.unikue.commonplexus.javaseutil.constant.CharVariantConst;
+import cn.unikue.commonplexus.javaseutil.util.CollectionPlainWraps;
+import cn.unikue.commonplexus.javaseutil.util.RegexUtilsWraps;
+import cn.unikue.commonplexus.javaseutil.util.StringUtilsWraps;
+import cn.unikue.commonplexus.springutil.support.ClassPathScanningSimpleComponentProvider;
+import cn.unikue.commonplexus.springutil.util.BeanFactoryWraps;
+import cn.unikue.commonplexus.springutil.util.ClassUtilsWraps;
+import cn.unikue.springstarter.datasourcebuilder.composer.DataSourceBuilder;
+import cn.unikue.springstarter.datasourcebuilder.constant.DataSourcePoolConst;
+import cn.unikue.springstarter.datasourcebuilder.enumeration.DataSourcePoolType;
+import cn.unikue.springstarter.datasourcebuilder.property.C3p0DataSourceProperties;
+import cn.unikue.springstarter.datasourcebuilder.property.Dbcp2DataSourceProperties;
+import cn.unikue.springstarter.datasourcebuilder.property.DruidDataSourceProperties;
+import cn.unikue.springstarter.datasourcebuilder.property.HikariDataSourceProperties;
+import cn.unikue.springstarter.datasourcebuilder.property.OracleUcpDataSourceProperties;
+import cn.unikue.springstarter.datasourcebuilder.property.TomcatDataSourceProperties;
+import cn.unikue.springstarter.dynamicdatasource.composer.DynamicDataSourceHolder;
+import cn.unikue.springstarter.dynamicdatasource.config.DynamicDataSourceJdbcConfiguration;
+import cn.unikue.springstarter.dynamicdatasource.property.DynamicDataSourceProperties;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

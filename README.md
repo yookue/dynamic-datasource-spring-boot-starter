@@ -8,7 +8,7 @@ Spring Boot application integrates dynamic `DataSource` quickly.
 
 ```xml
     <dependency>
-        <groupId>com.yookue.springstarter</groupId>
+        <groupId>cn.unikue.springstarter</groupId>
         <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
         <version>LATEST</version>
     </dependency>
@@ -59,7 +59,7 @@ Take one of the previous database `testdb1` for example, the annotation is
 
 ## Document
 
-- Github: https://github.com/yookue/dynamic-datasource-spring-boot-starter
+- Github: https://github.com/unikueltd/dynamic-datasource-spring-boot-starter
 
 ## Requirement
 
@@ -73,12 +73,12 @@ See the `NOTICE.txt` file for required notices and attributions.
 
 ## Donation
 
-You like this package? Then [donate to us](https://yookue.com/donation) to support the development.
+You like this package? Then [donate to us](https://unikue.cn/donation) to support the development.
 
 ## Copyright
 
-Beijing Yookue Network Technology Ltd.
+Beijing Unikue Network Technology Ltd.
 
 ## Website
 
-- Yookue: https://yookue.com
+- Unikue: https://unikue.cn
